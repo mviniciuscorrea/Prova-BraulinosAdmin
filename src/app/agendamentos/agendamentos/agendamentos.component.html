@@ -1,0 +1,54 @@
+<div style="margin-left: 30%; margin-right: 30%; margin-top: 3%;">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Código / Nome do Cliente" aria-label="Recipient's username"
+            aria-describedby="button-addon2" [(ngModel)]="pesquisar">
+        <div class="input-group-append">
+            <button class="btn btn-secondary" type="button" id="button-addon2"
+                (click)="pesquisarCliente()">Pesquisar</button>
+        </div>
+    </div>
+</div>
+
+<div class="cloud-box" *ngIf="listaAgendamento.length > 0">
+    <div style="margin-left: -5px; margin-right: -5px;">
+        <table class="table table-striped" style="padding-left: 25px;">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" style="width: 90px;">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Serviço</th>
+                    <th scope="col">Agendado para</th>                    
+                    <th scope="col">Confirmado</th>
+                    <th scope="col">Status</th>
+                    <th scope="col" style="width: 113px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let a of listaAgendamento">
+                    <th scope="row" style="width: 90px;">{{a.id}}</th>
+                    <td>{{a.nome}}</td>
+                    <td>{{a.servico}}</td>
+                    <td>{{a.data_agendamento}} as {{a.hora_agendamento}}</td>                    
+                    <td *ngIf="a.confirmado"><span class="badge badge-success">Sim</span></td>
+                    <td *ngIf="!a.confirmado"><span class="badge badge-danger">Não</span></td>
+                    <td *ngIf="!a.realizado"><span class="badge badge-success">Pendente</span></td>
+                    <td *ngIf="a.realizado"><span class="badge badge-danger">Realizado</span></td>
+
+                    <td style="float: right; width: 180px">
+                        <button type="button" class="btn btn-success btn-sm" (click)="confirmar(a)">
+                            <img src="../../assets/images/tick.png">
+                        </button>
+
+                        <button type="button" class="btn btn-warning btn-sm" (click)="reagendar(a)">
+                            <img src="../../assets/images/edit.png">
+                        </button>
+
+                        <button type="button" class="btn btn-danger btn-sm" (click)="finalizar(a)">
+                            <img src="../../assets/images/tick-double.png">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

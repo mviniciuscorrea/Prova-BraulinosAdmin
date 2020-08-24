@@ -1,0 +1,18 @@
+<div class="image">
+    <div class="loginbox">
+      <img src="https://cdn.pixabay.com/photo/2014/10/29/01/10/woman-507444_960_720.png" class="avatar">   
+  
+      <h1>Login</h1>
+      <form>
+        <p>Usuário</p>
+        <input type="text" [(ngModel)]="user" placeholder="Usuário" name="user">
+        <p>Senha</p>
+        <input type="Password" [(ngModel)]="pass" placeholder="Informe sua senha" name="pass">
+        <input type="submit" name="login" value="Entrar" (click)="login()">
+        <a href="#">Perdeu sua senha?</a><br> 
+        <a href="#">Não tem uma conta?</a>
+      </form>
+    </div>
+  </div>
+  
+  

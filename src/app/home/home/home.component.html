@@ -1,0 +1,70 @@
+<div class="row" *ngIf="status!=null">
+    <div class="col-md-3 col-sm-6">
+        <div class="pricingTable">
+            <div class="pricingTable-header">
+                <span class="heading">
+                    <h3>Total Serviços</h3>
+                </span>
+                <span class="price-value"><span class="currency"></span>{{status.total_servicos}}<span
+                        class="mo"></span></span>
+            </div>
+
+            <div class="pricingContent">
+                <ul>
+                    <li>Total de serviços</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="pricingTable">
+            <div class="pricingTable-header">
+                <span class="heading">
+                    <h3>Confirmados</h3>
+                </span>
+                <span class="price-value"><span class="currency"></span>{{status.confirmados}}<span
+                        class="mo"></span></span>
+            </div>
+
+            <div class="pricingContent">
+                <ul>
+                    <li>Agendamentos confirmados</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="pricingTable">
+            <div class="pricingTable-header">
+                <span class="heading">
+                    <h3>A Confirmar</h3>
+                </span>
+                <span class="price-value"><span class="currency"></span>{{status.confirmar}}<span
+                        class="mo"></span></span>
+            </div>
+
+            <div class="pricingContent">
+                <ul>
+                    <li>Agendamentos a confirmar reserva</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="pricingTable">
+            <div class="pricingTable-header">
+                <span class="heading">
+                    <h3>Recebido</h3>
+                </span>
+                <span class="price-value"><span class="currency"></span>
+                    {{status.recebido | currency:"BRL":true:"1.2"}}<span class="mo"></span></span>
+            </div>
+
+            <div class="pricingContent">
+                <ul>
+                    <li>Recebido em 7 dias</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+export const _urlBase = 'http://localhost:3000/';
